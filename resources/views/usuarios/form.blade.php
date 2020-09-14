@@ -16,10 +16,10 @@
 
                     <h1>Cadastrar novo Usuário</h1>
                 
+                    @if( Request::is( '*/edit'))
                     <form action="{{ url('usuarios/add' )}}" method="POST">
                  @csrf
-                    
-                    @if( Request::id( '*/edit'))
+            
                     <div class="form-group">
                        <label for="exampleInputEmail1">Nome: </label>
                       <input type="text" class="form-control" name="name" value="{{ $usuario->name}}">
@@ -33,6 +33,7 @@
               <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
 
+              @else
 
                  <form action="{{ url('usuarios/add' )}}" method="POST">
                  @csrf
@@ -49,7 +50,7 @@
 
               <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
-
+            @endif
                 </div>
             </div>
         </div>

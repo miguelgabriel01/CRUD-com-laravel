@@ -35,7 +35,7 @@
                         <td>{{ $u->email }}</td>
 
                        <td>
-                       <a href="usuarios/{{ $u-> d}}/edit" class="btn btn-info">Editar</a>
+                       <a href="usuarios/{{ $u->id}}/edit" class="btn btn-info">Editar</a>
                        </td>
 
                        <td>

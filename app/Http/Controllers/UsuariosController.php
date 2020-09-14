@@ -33,7 +33,7 @@ class UsuariosController extends Controller
 
     //Metodo que redireciona para o form de edição dos dados do usuario
     public function edit( $id ){
-        $usuario = findOrFail( $id );
+        $usuario = Usuario::findOrFail( $id );
 
         return view('usuarios.form', ['usuario' => $usuario]);//view que contem o form de edição de dados
     }
