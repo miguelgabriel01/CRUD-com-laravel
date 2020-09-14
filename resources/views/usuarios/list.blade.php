@@ -15,10 +15,38 @@
                     @endif
 
                     <h1>Lista dos usuários </h1>
-                    
+                  
+                    <table class="table table-striped table-dark ">
+                    <thead>
+                      <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Editar</th>
+                        <th scope="col">Deletar</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
                     @foreach( $usuarios as $u )
-                    <p>{{$u->name}}  |  {{$u->email}}</p>
+                      <tr>
+                        <th scope="row">{{ $u->id }}</th>
+                        <td>{{ $u->name }}</td>
+                        <td>{{ $u->email }}</td>
+
+                       <td>
+                       <a href="usuarios/{{ $u-> d}}/edit" class="btn btn-info">Editar</a>
+                       </td>
+
+                       <td>
+                       <a class="btn btn-danger">Deletar</a>
+                       </td>
+                        
+                      </tr>
                     @endforeach
+
+                    </tbody>
+                  </table>
 
                 </div>
             </div>

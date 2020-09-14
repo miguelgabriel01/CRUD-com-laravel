@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><a href="{{url('usuarios/new')}}">Listar usuário cadastrados</a></div>
+                <div class="card-header"><a href="{{url('usuarios')}}">Listar usuário cadastrados</a></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -16,7 +16,27 @@
 
                     <h1>Cadastrar novo Usuário</h1>
                 
-                 <form>
+                    <form action="{{ url('usuarios/add' )}}" method="POST">
+                 @csrf
+                    
+                    @if( Request::id( '*/edit'))
+                    <div class="form-group">
+                       <label for="exampleInputEmail1">Nome: </label>
+                      <input type="text" class="form-control" name="name" value="{{ $usuario->name}}">
+                    </div>
+
+                    <div class="form-group">
+                       <label for="exampleInputEmail1">E-mail: </label>
+                      <input type="email" class="form-control" name="email" value="{{ $usuario->email}}">
+                    </div>
+
+              <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+
+
+                 <form action="{{ url('usuarios/add' )}}" method="POST">
+                 @csrf
+
                     <div class="form-group">
                        <label for="exampleInputEmail1">Nome: </label>
                       <input type="text" class="form-control" name="name">

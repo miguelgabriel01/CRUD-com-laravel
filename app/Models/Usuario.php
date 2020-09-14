@@ -10,8 +10,11 @@ class Usuario extends Model
     use HasFactory;
 
     //campos que podem ser preen automaticamente...
-    protected $filelable = [
+    protected $fillable = [
         'name',
         'email'
+        
     ];
+
+    use HasFactory;
 }
