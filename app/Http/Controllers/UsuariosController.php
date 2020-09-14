@@ -37,4 +37,14 @@ class UsuariosController extends Controller
 
         return view('usuarios.form', ['usuario' => $usuario]);//view que contem o form de edição de dados
     }
+
+    //Metodo responsavel por receber os dados do form de edição e salvar os dados já alterados dentro do BD
+    public function update($id,Request $request){
+      
+        $usuario = Usuario::findOrFail( $id );
+        $usuario->update( $request->all());
+
+        //depois de atualizar, o usuario é redirecionado
+        return Redirect::to('/usuarios');//neste caso é redirecionado para a view que lista os usuarios cadastrado e atualizados
+    }
 }

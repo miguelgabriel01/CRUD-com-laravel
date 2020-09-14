@@ -35,3 +35,7 @@ Route::post('/usuarios/add', [App\Http\Controllers\UsuariosController::class, 'a
 
 //Rota responsavel por redirecionar ao form de edição de dados
 Route::get('/usuarios/{id}/edit', [App\Http\Controllers\UsuariosController::class, 'edit']);
+
+//Rota responsavel por receber os dados editados e salvar no banco
+Route::post('/usuarios/update/{id}', [App\Http\Controllers\UsuariosController::class, 'update']);
+

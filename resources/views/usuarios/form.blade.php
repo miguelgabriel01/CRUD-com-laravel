@@ -14,10 +14,13 @@
                         </div>
                     @endif
 
-                    <h1>Cadastrar novo Usuário</h1>
+
                 
                     @if( Request::is( '*/edit'))
-                    <form action="{{ url('usuarios/add' )}}" method="POST">
+
+                    <h1>Alterar dados</h1>
+
+                    <form action="{{ url('usuarios/update' ) }}/{{ $usuario->id}}" method="POST">
                  @csrf
             
                     <div class="form-group">
@@ -34,6 +37,7 @@
             </form>
 
               @else
+              <h1>Cadastrar novo Usuário</h1>
 
                  <form action="{{ url('usuarios/add' )}}" method="POST">
                  @csrf
