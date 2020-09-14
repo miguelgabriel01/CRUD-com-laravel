@@ -12,11 +12,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Esta parte do codigo funciona para que toda vez que o usuario de um logout ou acesse a pagina, ele seja direcionado para a view de login
+Route::group(['midleware' => 'web'], function(){
 
-Route::get('/', function () {
-    return view('welcome');
+
+    Route::get('/',  [App\Http\Controllers\HomeController::class, 'index']);
+    
+    Auth::routes();
+    
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Rota responsavel por listar os usuario
+Route::get('/usuarios', [App\Http\Controllers\UsuariosController::class, 'index']);
