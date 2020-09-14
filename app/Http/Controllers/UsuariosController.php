@@ -12,4 +12,9 @@ class UsuariosController extends Controller
 
         return view('usuarios.list', ['usuarios' => $usuarios]);//retorna a view que esta dentro da pasta usuarios e tem por nome list e envia a variavel para ela 
     }
+
+    //Metodo responsavel por cadastrar novo usuario
+    public function new(){
+        return view('usuarios.form');
+    }
 }

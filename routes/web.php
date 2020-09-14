@@ -26,3 +26,6 @@ Route::group(['midleware' => 'web'], function(){
 
 //Rota responsavel por listar os usuario
 Route::get('/usuarios', [App\Http\Controllers\UsuariosController::class, 'index']);
+
+//Rota responsavel por cadastrar novo usuario
+Route::get('/usuarios/new', [App\Http\Controllers\UsuariosController::class, 'new']);
