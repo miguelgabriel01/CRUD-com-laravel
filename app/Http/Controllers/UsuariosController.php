@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Usuario;
 use Illuminate\Http\Request;
 
 class UsuariosController extends Controller
 {
     //metodo para listar os usuario
     public function index(){
-        return view('usuarios.list');//retorna a view que esta dentro da pasta usuarios e tem por nome list
+        $usuarios = Usuario::get();
+
+        return view('usuarios.list', ['usuarios' => $usuarios]);//retorna a view que esta dentro da pasta usuarios e tem por nome list e envia a variavel para ela 
     }
 }
