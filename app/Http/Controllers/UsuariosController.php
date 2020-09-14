@@ -47,4 +47,13 @@ class UsuariosController extends Controller
         //depois de atualizar, o usuario é redirecionado
         return Redirect::to('/usuarios');//neste caso é redirecionado para a view que lista os usuarios cadastrado e atualizados
     }
+
+    //Metodo que apaga um usuario já cadastrado
+    public function delete( $id){
+        
+        $usuario = Usuario::findOrFail( $id );
+        $usuario->delete();
+
+        return Redirect::to('/usuarios');//depois que apagar o registro, redireciona o usuario para a lista de cadastrados 
+    }
 }

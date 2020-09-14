@@ -39,7 +39,11 @@
                        </td>
 
                        <td>
-                       <a class="btn btn-danger">Deletar</a>
+                       <form action="usuarios/delete/{{ $u->id}}" method="POST">
+                       @csrf
+                       @method('delete')
+                       <button class="btn btn-danger">Deletar</button>
+                       </form>
                        </td>
                         
                       </tr>
